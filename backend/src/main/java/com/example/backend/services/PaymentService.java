@@ -11,7 +11,7 @@ public class PaymentService {
 
     private final PaymentRepository repository;
 
-    public void addNew(Payment payment) {
+    public void create(Payment payment) {
         repository.save(payment);
     }
 }

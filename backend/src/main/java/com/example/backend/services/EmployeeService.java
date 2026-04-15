@@ -11,7 +11,7 @@ public class EmployeeService {
 
     private final EmployeeRepository repository;
 
-    public void addNew(Employee employee) {
+    public void create(Employee employee) {
         repository.save(employee);
     }
 }

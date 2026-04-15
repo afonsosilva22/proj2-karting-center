@@ -13,9 +13,9 @@ public class RaceController {
 
     private final RaceService service;
 
-    @PostMapping("/add")
-    public Race addNewRace(@RequestBody Race race) {
-        service.addNew(race);
+    @PostMapping("/create")
+    public Race create(@RequestBody Race race) {
+        service.create(race);
         return race;
     }
 }

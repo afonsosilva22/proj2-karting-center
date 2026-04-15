@@ -11,7 +11,7 @@ public class PostalCodeService {
 
     private final PostalCodeRepository repository;
 
-    public void addNew(PostalCode postalCode) {
+    public void create(PostalCode postalCode) {
         repository.save(postalCode);
     }
 }

@@ -11,7 +11,7 @@ public class LapService {
 
     private final LapRepository repository;
 
-    public void addNew(Lap lap) {
+    public void create(Lap lap) {
         repository.save(lap);
     }
 }

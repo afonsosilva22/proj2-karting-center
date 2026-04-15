@@ -11,7 +11,7 @@ public class KartTypePriceService {
 
     private final KartTypePriceRepository repository;
 
-    public void addNew(KartTypePrice kartTypePrice) {
+    public void create(KartTypePrice kartTypePrice) {
         repository.save(kartTypePrice);
     }
 }

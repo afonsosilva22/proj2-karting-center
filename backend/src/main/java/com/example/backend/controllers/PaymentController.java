@@ -13,9 +13,9 @@ public class PaymentController {
 
     private final PaymentService service;
 
-    @PostMapping("/add")
-    public Payment addNewPayment(@RequestBody Payment payment) {
-        service.addNew(payment);
+    @PostMapping("/create")
+    public Payment create(@RequestBody Payment payment) {
+        service.create(payment);
         return payment;
     }
 }

@@ -13,9 +13,9 @@ public class MaintenanceController {
 
     private final MaintenanceService service;
 
-    @PostMapping("/add")
-    public Maintenance addNewMaintenance(@RequestBody Maintenance maintenance) {
-        service.addNew(maintenance);
+    @PostMapping("/create")
+    public Maintenance create(@RequestBody Maintenance maintenance) {
+        service.create(maintenance);
         return maintenance;
     }
 }

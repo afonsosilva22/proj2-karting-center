@@ -11,7 +11,7 @@ public class EquipmentService {
 
     private final EquipmentRepository repository;
 
-    public void addNew(Equipment equipment) {
+    public void create(Equipment equipment) {
         repository.save(equipment);
     }
 }

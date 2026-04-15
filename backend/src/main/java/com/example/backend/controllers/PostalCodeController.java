@@ -13,9 +13,9 @@ public class PostalCodeController {
 
     private final PostalCodeService service;
 
-    @PostMapping("/add")
-    public PostalCode addNewPostalCode(@RequestBody PostalCode postalCode) {
-        service.addNew(postalCode);
+    @PostMapping("/create")
+    public PostalCode create(@RequestBody PostalCode postalCode) {
+        service.create(postalCode);
         return postalCode;
     }
 }

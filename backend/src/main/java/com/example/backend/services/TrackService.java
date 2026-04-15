@@ -11,7 +11,7 @@ public class TrackService {
 
     private final TrackRepository repository;
 
-    public void addNew(Track track) {
+    public void create(Track track) {
         repository.save(track);
     }
 }

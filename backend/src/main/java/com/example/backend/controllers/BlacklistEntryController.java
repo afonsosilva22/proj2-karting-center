@@ -13,9 +13,9 @@ public class BlacklistEntryController {
 
     private final BlacklistEntryService service;
 
-    @PostMapping("/add")
-    public BlacklistEntry addNewBlacklistEntry(@RequestBody BlacklistEntry blacklistEntry) {
-        service.addNew(blacklistEntry);
+    @PostMapping("/create")
+    public BlacklistEntry create(@RequestBody BlacklistEntry blacklistEntry) {
+        service.create(blacklistEntry);
         return blacklistEntry;
     }
 

@@ -13,9 +13,9 @@ public class RentalController {
 
     private final RentalService service;
 
-    @PostMapping("/add")
-    public Rental addNewRental(@RequestBody Rental rental) {
-        service.addNew(rental);
+    @PostMapping("/create")
+    public Rental create(@RequestBody Rental rental) {
+        service.create(rental);
         return rental;
     }
 }

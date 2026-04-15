@@ -11,7 +11,7 @@ public class RaceKartService {
 
     private final RaceKartRepository repository;
 
-    public void addNew(RaceKart raceKart) {
+    public void create(RaceKart raceKart) {
         repository.save(raceKart);
     }
 }

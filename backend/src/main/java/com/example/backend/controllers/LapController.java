@@ -13,9 +13,9 @@ public class LapController {
 
     private final LapService service;
 
-    @PostMapping("/add")
-    public Lap addNewLap(@RequestBody Lap lap) {
-        service.addNew(lap);
+    @PostMapping("/create")
+    public Lap create(@RequestBody Lap lap) {
+        service.create(lap);
         return lap;
     }
 }

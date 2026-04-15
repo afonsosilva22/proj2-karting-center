@@ -13,9 +13,9 @@ public class KartTypePriceController {
 
     private final KartTypePriceService service;
 
-    @PostMapping("/add")
-    public KartTypePrice addNewKartTypePrice(@RequestBody KartTypePrice kartTypePrice) {
-        service.addNew(kartTypePrice);
+    @PostMapping("/create")
+    public KartTypePrice create(@RequestBody KartTypePrice kartTypePrice) {
+        service.create(kartTypePrice);
         return kartTypePrice;
     }
 }

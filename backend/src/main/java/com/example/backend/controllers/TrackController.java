@@ -13,9 +13,9 @@ public class TrackController {
 
     private final TrackService service;
 
-    @PostMapping("/add")
-    public Track addNewTrack(@RequestBody Track track) {
-        service.addNew(track);
+    @PostMapping("/create")
+    public Track create(@RequestBody Track track) {
+        service.create(track);
         return track;
     }
 }

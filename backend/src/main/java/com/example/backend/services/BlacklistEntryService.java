@@ -11,7 +11,7 @@ public class BlacklistEntryService {
 
     private final BlacklistEntryRepository repository;
 
-    public void addNew(BlacklistEntry blacklistEntry) {
+    public void create(BlacklistEntry blacklistEntry) {
         repository.save(blacklistEntry);
     }
 }

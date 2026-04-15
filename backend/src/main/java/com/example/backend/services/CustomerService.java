@@ -11,7 +11,7 @@ public class CustomerService {
 
     private final CustomerRepository repository;
 
-    public void addNew(Customer customer) {
+    public void create(Customer customer) {
         repository.save(customer);
     }
 }

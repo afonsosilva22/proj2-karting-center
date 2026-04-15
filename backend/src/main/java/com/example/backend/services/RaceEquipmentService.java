@@ -11,7 +11,7 @@ public class RaceEquipmentService {
 
     private final RaceEquipmentRepository repository;
 
-    public void addNew(RaceEquipment raceEquipment) {
+    public void create(RaceEquipment raceEquipment) {
         repository.save(raceEquipment);
     }
 }

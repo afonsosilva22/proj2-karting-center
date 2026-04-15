@@ -13,9 +13,9 @@ public class RaceEquipmentController {
 
     private final RaceEquipmentService service;
 
-    @PostMapping("/add")
-    public RaceEquipment addNewRaceEquipment(@RequestBody RaceEquipment raceEquipment) {
-        service.addNew(raceEquipment);
+    @PostMapping("/create")
+    public RaceEquipment create(@RequestBody RaceEquipment raceEquipment) {
+        service.create(raceEquipment);
         return raceEquipment;
     }
 }

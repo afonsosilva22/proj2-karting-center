@@ -13,9 +13,9 @@ public class RaceKartController {
 
     private final RaceKartService service;
 
-    @PostMapping("/add")
-    public RaceKart addNewRaceKart(@RequestBody RaceKart raceKart) {
-        service.addNew(raceKart);
+    @PostMapping("/create")
+    public RaceKart create(@RequestBody RaceKart raceKart) {
+        service.create(raceKart);
         return raceKart;
     }
 }

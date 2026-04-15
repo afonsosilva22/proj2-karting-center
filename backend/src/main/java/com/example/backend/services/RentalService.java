@@ -11,7 +11,7 @@ public class RentalService {
 
     private final RentalRepository repository;
 
-    public void addNew(Rental rental) {
+    public void create(Rental rental) {
         repository.save(rental);
     }
 }

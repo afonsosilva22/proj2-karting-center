@@ -11,7 +11,7 @@ public class MaintenanceService {
 
     private final MaintenanceRepository repository;
 
-    public void addNew(Maintenance maintenance) {
+    public void create(Maintenance maintenance) {
         repository.save(maintenance);
     }
 }

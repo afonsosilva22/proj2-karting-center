@@ -13,9 +13,9 @@ public class EquipmentController {
 
     private final EquipmentService service;
 
-    @PostMapping("/add")
-    public Equipment addNewEquipment(@RequestBody Equipment equipment) {
-        service.addNew(equipment);
+    @PostMapping("/create")
+    public Equipment create(@RequestBody Equipment equipment) {
+        service.create(equipment);
         return equipment;
     }
 }
