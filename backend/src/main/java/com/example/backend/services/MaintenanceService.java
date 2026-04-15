@@ -2,16 +2,16 @@ package com.example.backend.services;
 
 import com.example.backend.models.Maintenance;
 import com.example.backend.repositories.MaintenanceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class MaintenanceService {
 
-    @Autowired
-    private MaintenanceRepository repository;
+    private final MaintenanceRepository repository;
 
-    public void saveMaintenance(Maintenance maintenance) {
+    public void addNew(Maintenance maintenance) {
         repository.save(maintenance);
     }
 }

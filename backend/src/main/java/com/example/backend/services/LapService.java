@@ -2,16 +2,16 @@ package com.example.backend.services;
 
 import com.example.backend.models.Lap;
 import com.example.backend.repositories.LapRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class LapService {
 
-    @Autowired
-    private LapRepository repository;
+    private final LapRepository repository;
 
-    public void saveLap(Lap lap) {
+    public void addNew(Lap lap) {
         repository.save(lap);
     }
 }

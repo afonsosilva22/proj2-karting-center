@@ -2,16 +2,16 @@ package com.example.backend.services;
 
 import com.example.backend.models.Track;
 import com.example.backend.repositories.TrackRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class TrackService {
 
-    @Autowired
-    private TrackRepository repository;
+    private final TrackRepository repository;
 
-    public void saveTrack(Track track) {
+    public void addNew(Track track) {
         repository.save(track);
     }
 }

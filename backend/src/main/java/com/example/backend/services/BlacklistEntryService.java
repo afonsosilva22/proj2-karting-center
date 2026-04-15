@@ -2,16 +2,16 @@ package com.example.backend.services;
 
 import com.example.backend.models.BlacklistEntry;
 import com.example.backend.repositories.BlacklistEntryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class BlacklistEntryService {
 
-    @Autowired
-    private BlacklistEntryRepository repository;
+    private final BlacklistEntryRepository repository;
 
-    public void saveBlacklistEntry(BlacklistEntry blacklistEntry) {
+    public void addNew(BlacklistEntry blacklistEntry) {
         repository.save(blacklistEntry);
     }
 }

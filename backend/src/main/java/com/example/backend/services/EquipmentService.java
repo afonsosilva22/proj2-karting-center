@@ -2,16 +2,16 @@ package com.example.backend.services;
 
 import com.example.backend.models.Equipment;
 import com.example.backend.repositories.EquipmentRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class EquipmentService {
 
-    @Autowired
-    private EquipmentRepository repository;
+    private final EquipmentRepository repository;
 
-    public void saveEquipment(Equipment equipment) {
+    public void addNew(Equipment equipment) {
         repository.save(equipment);
     }
 }

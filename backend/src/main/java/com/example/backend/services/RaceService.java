@@ -2,16 +2,16 @@ package com.example.backend.services;
 
 import com.example.backend.models.Race;
 import com.example.backend.repositories.RaceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class RaceService {
 
-    @Autowired
-    private RaceRepository repository;
+    private final RaceRepository repository;
 
-    public void saveRace(Race race) {
+    public void addNew(Race race) {
         repository.save(race);
     }
 }

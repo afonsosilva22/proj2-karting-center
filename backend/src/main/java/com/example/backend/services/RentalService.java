@@ -2,16 +2,16 @@ package com.example.backend.services;
 
 import com.example.backend.models.Rental;
 import com.example.backend.repositories.RentalRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class RentalService {
 
-    @Autowired
-    private RentalRepository repository;
+    private final RentalRepository repository;
 
-    public void saveRental(Rental rental) {
+    public void addNew(Rental rental) {
         repository.save(rental);
     }
 }

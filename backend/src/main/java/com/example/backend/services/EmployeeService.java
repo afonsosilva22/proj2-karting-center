@@ -2,16 +2,16 @@ package com.example.backend.services;
 
 import com.example.backend.models.Employee;
 import com.example.backend.repositories.EmployeeRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class EmployeeService {
 
-    @Autowired
-    private EmployeeRepository repository;
+    private final EmployeeRepository repository;
 
-    public void saveEmployee(Employee employee) {
+    public void addNew(Employee employee) {
         repository.save(employee);
     }
 }

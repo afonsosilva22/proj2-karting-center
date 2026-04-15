@@ -2,16 +2,16 @@ package com.example.backend.services;
 
 import com.example.backend.models.KartTypePrice;
 import com.example.backend.repositories.KartTypePriceRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class KartTypePriceService {
 
-    @Autowired
-    private KartTypePriceRepository repository;
+    private final KartTypePriceRepository repository;
 
-    public void saveKartTypePrice(KartTypePrice kartTypePrice) {
+    public void addNew(KartTypePrice kartTypePrice) {
         repository.save(kartTypePrice);
     }
 }
