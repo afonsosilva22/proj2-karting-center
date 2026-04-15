@@ -39,9 +39,6 @@ public class Kart {
     @OneToMany(mappedBy = "kart")
     private Set<Maintenance> maintenances = new LinkedHashSet<>();
 
-    @ManyToMany(mappedBy = "karts")
-    private Set<Race> races = new LinkedHashSet<>();
-
     public Integer getId() {
         return id;
     }
@@ -104,14 +101,6 @@ public class Kart {
 
     public void setMaintenances(Set<Maintenance> maintenances) {
         this.maintenances = maintenances;
-    }
-
-    public Set<Race> getRaces() {
-        return races;
-    }
-
-    public void setRaces(Set<Race> races) {
-        this.races = races;
     }
 
 }
