@@ -5,13 +5,24 @@ import com.example.backend.repositories.BlacklistEntryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class BlacklistEntryService {
 
     private final BlacklistEntryRepository repository;
 
-    public void create(BlacklistEntry blacklistEntry) {
-        repository.save(blacklistEntry);
+    public BlacklistEntry create(BlacklistEntry blacklistEntry) {
+        return repository.save(blacklistEntry);
+    }
+
+    public List<BlacklistEntry> getAll() {
+        return repository.findAll();
+    }
+
+    public BlacklistEntry getById(Integer id) {
+        return repository.findById(id)
+                .orElseThrow(() -> new RuntimeException("BlacklistEntry not found"));
     }
 }
