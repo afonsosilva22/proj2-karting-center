@@ -1,5 +1,6 @@
 package com.example.backend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.LinkedHashSet;
@@ -15,9 +16,11 @@ public class PostalCode {
     @Column(name = "locality", nullable = false, length = 100)
     private String locality;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "postalCode")
     private Set<Customer> customers = new LinkedHashSet<>();
 
+    @JsonIgnore
     @OneToMany(mappedBy = "postalCode")
     private Set<Employee> employees = new LinkedHashSet<>();
 

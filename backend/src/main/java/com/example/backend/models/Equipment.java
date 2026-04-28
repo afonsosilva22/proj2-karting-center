@@ -1,5 +1,6 @@
 package com.example.backend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import org.hibernate.annotations.ColumnDefault;
 
@@ -35,6 +36,7 @@ public class Equipment {
     @Column(name = "status", nullable = false, length = 20)
     private String status;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "equipment")
     private Set<RaceEquipment> raceEquipments = new LinkedHashSet<>();
 
