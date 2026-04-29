@@ -4,7 +4,11 @@ module com.example.desktop {
 
     requires org.controlsfx.controls;
     requires com.dlsc.formsfx;
+    requires java.net.http;
+    requires com.google.gson;
 
     opens com.example.desktop to javafx.fxml;
+    opens com.example.desktop.controllers to javafx.fxml;
+    opens com.example.desktop.models to javafx.fxml, com.google.gson, javafx.base;
     exports com.example.desktop;
 }

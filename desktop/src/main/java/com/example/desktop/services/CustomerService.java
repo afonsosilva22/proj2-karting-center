@@ -1,0 +1,48 @@
+package com.example.desktop.services;
+
+import com.example.desktop.models.Customer;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.util.List;
+
+public class CustomerService {
+
+    private final HttpClient client = HttpClient.newHttpClient();
+    private final Gson gson = new Gson();
+
+    private final String BASE_URL = "http://localhost:8080/api/customers";
+
+    public List<Customer> getAllCustomers() throws Exception {
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(BASE_URL + "/get/all"))
+                .GET()
+                .build();
+
+        HttpResponse<String> response =
+                client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        Type listType = new TypeToken<List<Customer>>() {}.getType();
+
+        return gson.fromJson(response.body(), listType);
+    }
+
+    public Customer getCustomerById(Integer id) throws Exception {
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(BASE_URL + "/get/" + id))
+                .GET()
+                .build();
+
+        HttpResponse<String> response =
+                client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        return gson.fromJson(response.body(), Customer.class);
+    }
+}
