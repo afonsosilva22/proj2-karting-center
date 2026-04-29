@@ -12,13 +12,14 @@
          </padding>
          <children>
             <Button fx:id="btnLoad" mnemonicParsing="false" onAction="#loadCustomers" text="Load Customers" />
+            <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#addCustomer" text="Add Customer" />
             <TableView fx:id="table" prefHeight="370.0" prefWidth="450.0">
               <columns>
-                <TableColumn prefWidth="41.19994354248047" fx:id="colId" text="id" />
-                <TableColumn prefWidth="134.0" fx:id="colName" text="name" />
-                  <TableColumn prefWidth="93.60003662109375" fx:id="colEmail" text="email" />
-                  <TableColumn prefWidth="87.0" fx:id="colPhone" text="phone" />
-                  <TableColumn prefWidth="96.00003051757812" fx:id="colStatus" text="status" />
+                <TableColumn fx:id="colId" prefWidth="41.19994354248047" text="id" />
+                <TableColumn fx:id="colName" prefWidth="134.0" text="name" />
+                  <TableColumn fx:id="colEmail" prefWidth="93.60003662109375" text="email" />
+                  <TableColumn fx:id="colPhone" prefWidth="87.0" text="phone" />
+                  <TableColumn fx:id="colStatus" prefWidth="96.00003051757812" text="status" />
               </columns>
             </TableView>
          </children>

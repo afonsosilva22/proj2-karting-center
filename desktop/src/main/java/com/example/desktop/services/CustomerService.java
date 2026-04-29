@@ -18,6 +18,26 @@ public class CustomerService {
 
     private final String BASE_URL = "http://localhost:8080/api/customers";
 
+    public Customer create(Customer customer) throws Exception {
+
+        String json = gson.toJson(customer);
+
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create(BASE_URL + "/create"))
+                .header("Content-Type", "application/json")
+                .POST(HttpRequest.BodyPublishers.ofString(json))
+                .build();
+
+        HttpResponse<String> response =
+                client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        if (response.statusCode() >= 200 && response.statusCode() < 300) {
+            return gson.fromJson(response.body(), Customer.class);
+        } else {
+            throw new RuntimeException("Failed to create customer: " + response.body());
+        }
+    }
+
     public List<Customer> getAllCustomers() throws Exception {
 
         HttpRequest request = HttpRequest.newBuilder()

@@ -4,9 +4,15 @@ import com.example.desktop.models.Customer;
 import com.example.desktop.services.CustomerService;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class CustomerController {
 
@@ -50,6 +56,22 @@ public class CustomerController {
                     )
             );
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void addCustomer() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/desktop/add-customer.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = new Stage();
+            stage.setTitle("Add Customer");
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
